@@ -3,7 +3,7 @@
   'use strict';
 
   // Indirizzo del Firebase Realtime Database delle spese (es. https://nome-default-rtdb.firebaseio.com). Vuoto = spese solo su questo telefono.
-  const SYNC_URL = 'https://amsterdam-spese-default-rtdb.europe-west1.firebasedatabase.app';
+  const SYNC_URL = 'https://viaggi-es-default-rtdb.europe-west1.firebasedatabase.app';
 
   const DEFAULT_PEOPLE = 'Etienne, Fabiana';
   const DEFAULT_TRIP = 'ams27-30c616a3d8';
