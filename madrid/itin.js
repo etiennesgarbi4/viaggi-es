@@ -172,7 +172,7 @@
   const todayIso = iso(new Date());
   const todayIdx = TRIP_DAYS.indexOf(todayIso);
   header.innerHTML =
-    '<div class="app-header-inner"><div><div class="app-title">MADRID 🇪🇸</div><div class="app-dates">28 dicembre - 2 gennaio</div></div><div class="header-count" id="hc"></div></div>' +
+    '<div class="app-header-inner"><div><a class="hdr-back" href="../">‹ Viaggi</a><div class="app-title">MADRID 🇪🇸</div><div class="app-dates">28 dicembre - 2 gennaio</div></div><div class="header-count" id="hc"></div></div>' +
     '<div class="day-chips" id="chips">' + DAY_CHIP.map((d, i) => '<button class="chip-day' + (i === todayIdx ? ' today' : '') + '" data-day="' + i + '">' + d[0] + '<span>' + d[1] + '</span></button>').join('') + '</div>';
 
   function headerCount() {
@@ -194,7 +194,7 @@
   const altro = document.createElement('div');
   altro.className = 'screen hidden'; altro.id = S_ALTRO;
   altro.innerHTML = '<div class="page-title">Altro</div>' +
-    [['doc', '📎', 'Documenti', 'Biglietti, QR, passaporto'], ['pin', '📌', 'Da ricordare', 'Negozi e posti con foto e posizione'], ['nav', '🧭', 'Percorsi', 'Come arrivare a una tappa'],
+    [['home', '🧳', 'Tutti i viaggi', 'Torna alla scelta del viaggio'], ['doc', '📎', 'Documenti', 'Biglietti, QR, passaporto'], ['pin', '📌', 'Da ricordare', 'Negozi e posti con foto e posizione'], ['nav', '🧭', 'Percorsi', 'Come arrivare a una tappa'],
      ['safe', '🛡️', 'Sicurezza', 'Consigli e numeri utili'], ['info', '📋', 'Info e prenotazioni', 'Trasporti, coffee shop, prenotazioni'], ['crediti', '🖼️', 'Crediti foto e loghi', 'Autori, licenze e fonti']]
       .map((r) => '<button class="menu-row" data-go="' + r[0] + '"><span class="menu-ic">' + r[1] + '</span><span>' + r[2] + '<small>' + r[3] + '</small></span><span class="menu-go">›</span></button>').join('');
   const ver = document.createElement('p');
@@ -216,7 +216,7 @@
     b.addEventListener('click', () => go('altro'));
     s.prepend(b); s._back = b;
   });
-  $$('.menu-row', altro).forEach((b) => b.addEventListener('click', () => go(b.dataset.go)));
+  $$('.menu-row', altro).forEach((b) => b.addEventListener('click', () => { if (b.dataset.go === 'home') location.href = '../'; else go(b.dataset.go); }));
 
   // ── Navigazione ──
   const ICONS = {
