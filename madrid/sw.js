@@ -1,5 +1,5 @@
 // Cache per l'uso offline. Cambiare VERSION a ogni modifica dei file.
-const VERSION = 'madrid-v3';
+const VERSION = 'madrid-v4';
 const CORE = ['./', 'index.html', 'tools.css', 'itin.css', 'itin.js', 'itin-data.js', 'tools.js', 'data-osm.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'apple-touch-icon.png'];
 
 // Alla prima installazione i file si scaricano sempre dalla rete (cache: 'reload'), mai dalla memoria temporanea del browser
@@ -14,7 +14,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION && /^madrid-v/.test(k)).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
