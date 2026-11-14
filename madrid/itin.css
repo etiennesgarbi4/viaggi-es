@@ -1,24 +1,24 @@
 /* ── NUOVA GRAFICA: itinerario a tappe numerate ── */
 body .app-header { padding: 14px 16px 12px; background: var(--accent); box-shadow: 0 2px 10px rgba(0,0,0,.18); }
 .xxx { display: inline-block; width: 52px; height: 14px; margin-left: 10px; vertical-align: 2px; }
-body .app-title { font-size: 26px; color: #000; }
-body .app-dates { color: #000; font-weight: 600; }
+body .app-title { font-size: 26px; color: #F1BF00; }
+body .app-dates { color: #F1BF00; font-weight: 600; }
 .header-count {
-  background: rgba(255,255,255,.28); color: #000; font-size: 12px; font-weight: 600;
+  background: rgba(241,191,0,.22); color: #F1BF00; font-size: 12px; font-weight: 600;
   padding: 6px 10px; border-radius: 10px; text-align: right; line-height: 1.3; max-width: 52%;
 }
-.header-count b { color: #000; font-weight: 800; }
+.header-count b { color: #F1BF00; font-weight: 800; }
 .day-chips { display: none; gap: 6px; margin-top: 12px; overflow-x: auto; scrollbar-width: none; }
 .day-chips::-webkit-scrollbar { display: none; }
 .day-chips.show { display: flex; }
 .chip-day {
   flex: 1 0 auto; border: 0; cursor: pointer; text-align: center; padding: 6px 12px; border-radius: 12px;
-  background: rgba(255,255,255,.28); color: #000; font: 500 11px 'Hanken Grotesk', sans-serif;
+  background: rgba(241,191,0,.22); color: #F1BF00; font: 500 11px 'Hanken Grotesk', sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
-.chip-day span { display: block; font-size: 17px; font-weight: 700; color: #000; line-height: 1.2; }
-.chip-day.on { background: #fff; color: #000; }
-.chip-day.on span { color: #000; }
+.chip-day span { display: block; font-size: 17px; font-weight: 700; color: #F1BF00; line-height: 1.2; }
+.chip-day.on { background: #F1BF00; color: #4a0a0d; }
+.chip-day.on span { color: #4a0a0d; }
 .chip-day.today::after { content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: currentColor; margin: 2px auto 0; }
 
 /* intestazione del giorno */
@@ -59,7 +59,7 @@ body .screen .tappa.st { display: flex; gap: 10px; background: none; border: 0; 
 .st-time { font-weight: 700; color: var(--text2); }
 .st-top .tappa-tag { margin: 0; }
 .st-done { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: var(--text2); cursor: pointer; }
-.st-done input { width: 18px; height: 18px; accent-color: #EC0000; }
+.st-done input { width: 18px; height: 18px; accent-color: #AA151B; }
 .st-main { display: flex; gap: 10px; align-items: flex-start; }
 .st-text { flex: 1; min-width: 0; }
 body .st .tappa-name { font-size: 16px; font-weight: 600; line-height: 1.25; }
@@ -132,4 +132,4 @@ body #s6 .day-hero { display: none; }
 .st-ic.has-img.dual { flex-direction: column; gap: 6px; height: auto; background: none; border: 0; overflow: visible; }
 .st-ic .sq { flex: 0 0 52px; width: 52px; height: 52px; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid var(--border); display: block; }
 .st-ic .sq img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hdr-back { display: inline-block; font-size: 13px; font-weight: 700; color: #000; opacity: 0.75; text-decoration: none; margin-bottom: 4px; padding: 2px 0; }
+.hdr-back { display: inline-block; font-size: 13px; font-weight: 700; color: #F1BF00; opacity: 0.95; text-decoration: none; margin-bottom: 4px; padding: 2px 0; }

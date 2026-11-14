@@ -120,7 +120,7 @@ button.place-body {
 .place-more .pm-line b { color: var(--text); font-weight: 700; }
 .place-more .maps-row { margin-top: 8px; }
 
-.when { display: inline-block; margin-top: 4px; background: rgba(236,0,0,.10); color: var(--accent); font-weight: 700; font-size: 12px; padding: 2px 9px; border-radius: 10px; line-height: 1.35; }
+.when { display: inline-block; margin-top: 4px; background: rgba(170,21,27,.10); color: var(--accent); font-weight: 700; font-size: 12px; padding: 2px 9px; border-radius: 10px; line-height: 1.35; }
 
 .src-line { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; color: var(--text3); margin: 2px 0 8px; }
 
@@ -132,7 +132,7 @@ button.place-body {
 .bus-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 17px; font-variant-numeric: tabular-nums; }
 .bus-table th { text-align: left; font-size: 13px; padding: 8px 10px; border-bottom: 2px solid #111; }
 .bus-table td { padding: 9px 10px; border-bottom: 1px solid #ddd; }
-.bus-table tr.bus-pick td { background: #FFE3E3; font-weight: 700; }
+.bus-table tr.bus-pick td { background: #F6D5D7; font-weight: 700; }
 .bus-note { font-size: 13px; color: #444; margin: 8px 0; }
 
 .pin-prev img { width: 100%; max-height: 220px; object-fit: cover; border-radius: 12px; margin-top: 10px; border: 1px solid var(--border, #ddd); }

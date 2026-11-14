@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Madrid · Capodanno 2026</title>
-<meta name="theme-color" content="#EC0000">
+<meta name="theme-color" content="#AA151B">
 <meta name="description" content="Itinerario di Madrid, 28 dicembre - 2 gennaio">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -19,10 +19,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 
 :root {
-  --sg: #EC0000;
-  --dg: #B80000;
-  --accent: #EC0000;
-  --accent-light: #FF5A5A;
+  --sg: #AA151B;
+  --dg: #7F0F14;
+  --accent: #AA151B;
+  --accent-light: #E57A80;
   --on-accent: #FFFFFF;
   --ice: #E6E6E6;
   --white: #FFFFFF;
@@ -237,7 +237,7 @@ body::before {
   flex-shrink: 0;
 }
 .ic-default { background: var(--surface2); }
-.ic-coffee { background: rgba(236,0,0,0.10); }
+.ic-coffee { background: rgba(170,21,27,0.10); }
 .ic-food { background: rgba(100,180,120,0.12); }
 .ic-must { background: rgba(0,0,0,0.08); }
 .ic-transport { background: rgba(0,0,0,0.06); }
@@ -264,11 +264,11 @@ body::before {
   text-transform: uppercase;
   margin-bottom: 4px;
 }
-.tag-coffee { background: rgba(236,0,0,0.10); color: #A30000; }
+.tag-coffee { background: rgba(170,21,27,0.10); color: #7F0F14; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .tag-coffee { background: rgba(255,90,90,0.16); color: var(--accent-light); }
+  :root:not([data-theme="light"]) .tag-coffee { background: rgba(229,122,128,0.16); color: var(--accent-light); }
 }
-:root[data-theme="dark"] .tag-coffee { background: rgba(255,90,90,0.16); color: var(--accent-light); }
+:root[data-theme="dark"] .tag-coffee { background: rgba(229,122,128,0.16); color: var(--accent-light); }
 .tag-book { background: rgba(60,150,90,0.14); color: #2a6b43; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .tag-book { background: rgba(60,150,90,0.18); color: #7fd3a0; }
@@ -378,7 +378,7 @@ body::before {
 }
 .btn-m:active { opacity: 0.7; }
 .btn-dark { background: #fff; color: var(--accent); border: 1.5px solid var(--accent); }
-.btn-yellow { background: var(--accent); color: var(--on-accent); }
+.btn-yellow { background: #F1BF00; color: #4a0a0d; }
 .btn-outline { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
 
 /* ── COFFEE SHOP LIST ── */
