@@ -1,7 +1,7 @@
 {
-  "name": "Amsterdam · Marzo 2027",
-  "short_name": "Amsterdam",
-  "description": "Itinerario di Amsterdam, 27 - 31 marzo 2027",
+  "name": "Viaggi",
+  "short_name": "Viaggi",
+  "description": "Itinerari di viaggio: Madrid e Amsterdam",
   "lang": "it",
   "start_url": "./",
   "scope": "./",
