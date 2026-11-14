@@ -7,7 +7,7 @@
   const COORDS = window.AMS_COORDS || {};
   const IMG = window.AMS_IMG || {};
   // Tappe e quartieri che hanno un'immagine al posto dell'icona
-  const TAPPA_IMG = [['Bloemenmarkt', 'bloemenmarkt'], ['Albert Cuyp Market', 'albertcuyp'], ['Heineken Experience', 'heineken'], ['Van Gogh Museum', 'vangogh'], ['Moco Museum', 'moco'], ['Aperitivo a Rembrandtplein', 'rembrandtplein'], ['Ultimo drink a Rembrandtplein', 'rembrandtplein'], ["A'DAM Lookout", 'adam'], ['Boerejongens', 'boerejongens'], ['Volo di andata', 'volo'], ['Volo di ritorno', 'volo'], ['Albert Heijn', 'albertheijn'], ['SmokeBoat', 'smokeboat'], ['Dampkring', 'dampkring'], ['Paradox', 'paradox'], ['The Bulldog Leidseplein', 'bulldog'], ['Green House', 'greenhouse'], ['Tha Dogg House', 'doggohouse+barneys'], ['Café Hill Street Blues', 'hillstreetblues'], ['Begijnhof', 'begijnhof+dam'], ['Canali, Magere Brug', 'magerebrug'], ['Tyson 2.0', 'tyson']];
+  const TAPPA_IMG = [['Bloemenmarkt', 'bloemenmarkt'], ['Albert Cuyp Market', 'albertcuyp'], ['Heineken Experience', 'heineken'], ['Van Gogh Museum', 'vangogh'], ['Moco Museum', 'moco'], ['Aperitivo a Rembrandtplein', 'rembrandtplein'], ['Ultimo drink a Rembrandtplein', 'rembrandtplein'], ["A'DAM Lookout", 'adam'], ['Boerejongens', 'boerejongens'], ['Alloggio', 'alloggio'], ['Volo di andata', 'volo'], ['Volo di ritorno', 'volo'], ['Albert Heijn', 'albertheijn'], ['SmokeBoat', 'smokeboat'], ['Dampkring', 'dampkring'], ['Paradox', 'paradox'], ['The Bulldog Leidseplein', 'bulldog'], ['Green House', 'greenhouse'], ['Tha Dogg House', 'doggohouse+barneys'], ['Café Hill Street Blues', 'hillstreetblues'], ['Begijnhof', 'begijnhof+dam'], ['Canali, Magere Brug', 'magerebrug'], ['Tyson 2.0', 'tyson']];
   const QUARTIERE_IMG = { 'DE PIJP': 'albertcuyp', 'JORDAAN': 'jordaan', 'VONDELPARK': 'vondelpark', 'RED LIGHT DISTRICT': 'redlight' };
   const one = (k) => '<img src="' + IMG[k].src + '" alt="" loading="lazy">';
   const imgTag = (k, cls) => (k.indexOf('+') > 0 ? k.split('+').map((x) => '<span class="sq">' + one(x) + '</span>').join('') : IMG[k] ? '<img class="' + (cls || '') + '" src="' + IMG[k].src + '" alt="" loading="lazy">' : '');
@@ -140,7 +140,7 @@
       end.className = 'tappa st last';
       end.innerHTML = '<div class="st-rail"><div class="st-pin">🏨</div></div>' +
         '<div class="st-card"><div class="st-main"><div class="st-text"><div class="tappa-name">Rientro in alloggio</div>' +
-        '<div class="tappa-desc">Nieuwe Keizersgracht 57</div></div></div>' +
+        '<div class="tappa-desc">Nieuwe Keizersgracht 57</div></div>' + (IMG.alloggio ? '<div class="st-ic has-img">' + imgTag('alloggio') + '</div>' : '') + '</div>' +
         '<div class="maps-row"><a class="btn-m btn-dark" href="https://maps.google.com/?q=' + HOTEL_Q + '" target="_blank">📍 Alloggio</a></div></div>';
       lastT.classList.remove('last');
       lastT.parentNode.insertBefore(end, lastT.nextSibling);
