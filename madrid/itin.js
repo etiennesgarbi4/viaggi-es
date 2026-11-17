@@ -37,7 +37,9 @@
   // Riga di spostamento tra due luoghi consecutivi (tappe o quartieri), inserita prima di "before"
   function connector(prev, cur, toName, before, fromHotel) {
     if (!(prev && prev.q && cur.q && prev.c && cur.c)) return;
-    const d = distM(prev.c, cur.c), walk = Math.max(1, Math.round((d * 1.3) / 80));
+    // percorso a piedi misurato se c'è, altrimenti stima in linea d'aria
+    const leg = (window.AMS_LEGS || {})[prev.q + '|' + cur.q];
+    const d = leg ? leg[0] : distM(prev.c, cur.c), walk = leg ? leg[1] : Math.max(1, Math.round((d * 1.3) / 80));
     const km = d < 1000 ? Math.round(d / 10) * 10 + ' m' : (d / 1000).toFixed(1).replace('.', ',') + ' km';
     const air = /Barajas/.test(prev.q) || /Barajas/.test(cur.q), ferry = false, foot = !air && walk <= 30, mv = document.createElement('div');
     const alt = !air && d > 500;   // oltre 500 m si propongono entrambe le opzioni: a piedi e tram o bus
@@ -179,7 +181,8 @@
     const now = new Date(), start = new Date('2026-12-28T00:00:00'), end = new Date('2027-01-02T23:59:59');
     if (now < start) { const d = Math.ceil((start - now) / 864e5); return 'Mancano <b>' + d + '</b> ' + (d === 1 ? 'giorno' : 'giorni'); }
     if (now > end) return 'Viaggio concluso';
-    let out = 'Giorno <b>' + (todayIdx + 1) + ' di ' + N + '</b>';
+    // il 28 è solo la sera d'arrivo: i giorni veri vanno dal 29 al 2
+    let out = todayIdx === 0 ? '<b>Arrivo</b>' : 'Giorno <b>' + todayIdx + ' di ' + (N - 1) + '</b>';
     const hm = now.getHours() * 60 + now.getMinutes();
     const next = $$('.tappa.st', $('#s' + todayIdx)).map((t) => {
       const m = ($('.st-time', t) || {}).textContent || '', r = /^~?(\d{1,2}):(\d{2})/.exec(m);
